@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "903837756098",
+    "firebase_url": "https://speechcorpustext.firebaseio.com",
+    "project_id": "speechcorpustext",
+    "storage_bucket": "speechcorpustext.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903837756098:android:f12b63a3d519764c",
+        "android_client_info": {
+          "package_name": "com.example.letal.speechcorpustext"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903837756098-ac26oi9oba9idgf4do7d2ma0t3e8e2oj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.letal.speechcorpustext",
+            "certificate_hash": "174cecfe04a2c6c544ad011c65d784bcf4905b5f"
+          }
+        },
+        {
+          "client_id": "903837756098-vh7cllfq3ono07vr1r51729i4hr14kgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8Z8-f384Ec5JvhsGnma7TEGAmWw1vSko"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903837756098-vh7cllfq3ono07vr1r51729i4hr14kgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
