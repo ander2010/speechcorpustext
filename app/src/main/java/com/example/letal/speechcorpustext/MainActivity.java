@@ -34,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         tutorialmyRef = database.getReference(FirebaseReference.TUTORIAL_REFERENCE);
 
-//        if (txvResult.getText() != "" || txvResult.getText() != null)
+
+
+        //        if (txvResult.getText() != "" || txvResult.getText() != null)
 //
 //        {
 
@@ -46,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 //        }
+
+
+
 
 
     }
@@ -110,11 +115,19 @@ public class MainActivity extends AppCompatActivity {
                 // Abre una nueva Activity:
                 Intent myIntent = new Intent(this, Main2Activity.class);
                 startActivityForResult(myIntent, 0);
+                return true;
+            case R.id.editaSent:
+//                Toast toast1 =
+//                        Toast.makeText(getApplicationContext(),
+//                                "Le dio al Menu", Toast.LENGTH_SHORT);
+//
+//                toast1.show();
 
-
+                // Abre una nueva Activity:
+                Intent myIntentw = new Intent(this, Principal.class);
+                startActivityForResult(myIntentw, 0);
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

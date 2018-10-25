@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">speechcorpusText</string>
+    <string name="app_name">Corpus APP</string>
     <string name="list">Menu</string>
     <string name="listado">Listado Sentencias</string>
     <string name="editarsentencia">Editar Sentencia</string>
 </resources>
+
+

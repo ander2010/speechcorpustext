@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundcolor"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".Principal">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:clipToPadding="false"
+        android:layout_height="wrap_content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <android.support.v7.widget.CardView
+           android:layout_width="160dp"
+           android:layout_height="190dp"
+           android:foreground="?android:attr/selectableItemBackground"
+           android:clickable="true"
+           android:layout_margin="10dp">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:gravity="center"
+               android:orientation="vertical">
+<ImageView
+    android:layout_width="64dp"
+    android:background="@drawable/cerclebackgroundpurple"
+    android:src="@drawable/ic_plus_one_black_24dp"
+    android:padding="10dp"
+    android:layout_height="64dp" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:textStyle="bold"
+                   android:layout_marginTop="10dp"
+                   android:text="Datos Personales"
+                   android:layout_height="wrap_content" />
+               <View
+                   android:layout_width="match_parent"
+                   android:background="@color/lighgray"
+                   android:layout_margin="10dp"
+                   android:layout_height="1dp"/>
+
+             
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:gravity="center"
+                     android:text="Informacion sobre ti"
+                     android:padding="5dp"
+                     android:textColor="@color/darkgray"
+                     android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           </LinearLayout>
+
+       </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:background="@drawable/cerclebackgroundpink"
+                    android:src="@drawable/ic_record_voice_over_black_24dp"
+                    android:padding="10dp"
+                    android:layout_height="64dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Corpus"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/lighgray"
+                    android:layout_margin="10dp"
+                    android:layout_height="1dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:text="Grabación de Corpus"
+                    android:padding="5dp"
+                    android:textColor="@color/darkgray"
+                    android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:clipToPadding="false"
+        android:layout_height="wrap_content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:background="@drawable/cerclebackgroundgreen"
+                    android:src="@drawable/ic_exposure_black_24dp"
+                    android:padding="10dp"
+                    android:layout_height="64dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Operaciones"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/lighgray"
+                    android:layout_margin="10dp"
+                    android:layout_height="1dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:text="Diferentes Operaciones"
+                    android:padding="5dp"
+                    android:textColor="@color/darkgray"
+                    android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:background="@drawable/cerclebackgroundyello"
+                    android:src="@drawable/ic_account_box_black_24dp"
+                    android:padding="10dp"
+                    android:layout_height="64dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Nosotros"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/lighgray"
+                    android:layout_margin="10dp"
+                    android:layout_height="1dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:text="Información de como usar la aplicacion"
+                    android:padding="5dp"
+                    android:textColor="@color/darkgray"
+                    android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
