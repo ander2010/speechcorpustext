@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,20 +11,21 @@
 
 
 
-
     <TextView
         android:id="@+id/txvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-
         android:layout_marginRight="15dp"
-
-        android:text="@string/sentenciauno"
+        android:text="@string/sentencia"
         android:textColor="@color/cardview_dark_background"
         android:textSize="22sp"
         />
+
+
+
+
 
 
 
@@ -87,19 +89,23 @@
 
     </LinearLayout>
 
+
+
+
     <ImageView
-        android:id="@+id/btnSpeak"
+        android:id="@+id/btnSpeakpersona"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
         android:layout_marginBottom="60dp"
         android:contentDescription="TODO"
         android:gravity="center"
+        android:layout_gravity="center"
         android:onClick="getSpeechInput"
         android:src="@drawable/ic_mic"
         app:srcCompat="@drawable/ic_mic"
         tools:srcCompat="@drawable/ic_mic" />
+
 
 </LinearLayout>

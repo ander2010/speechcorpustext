@@ -23,6 +23,13 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+
+/**
+* Clase Principal que almacena un menu para acceder a cada una de las actividades
+* @author megamind
+ * @version  v7:28.0.0
+ *
+*/
 public class Principal extends AppCompatActivity implements View.OnClickListener  {
     private CardView nostros,corpus,datos,listado;
     private static final String PROCESS_OK = "PROCESS_OK";
@@ -31,6 +38,12 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     LinearLayout rl ;
 
 
+    /**
+     * Método sobreescrito para Inflar el Menu esta clase es fundamental porque es donde se infla el Menu
+     * @param  menu
+     * @return  true
+     *
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         /* Use AppCompatActivity's method getMenuInflater to get a handle on the menu inflater */
@@ -41,6 +54,12 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         return true;
     }
 
+    /**
+     * Método sobreescrito para seleccionar el item que fue clickeado en el Menu  Este método dgenera un parametro item el cual tiene una propiedad getItemId
+     * @param  item
+     * @return  true
+     *
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -53,6 +72,12 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     }
 
 
+    /**
+     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesitaria para la actividad
+     * @param  savedInstanceState
+     *
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,7 +136,13 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
+    /**
+     * Método sobreescrito generado a partir de la implementacion de  un View.OnClickListener y es para saber a que componente se dio clic
+     * Este Método realiza el case para obtener cual es el elemento cliqueado y a que actividad se va a llamar.
+     * @param   v
+     *
+     *
+     */
 
     @Override
     public void onClick(View v) {
@@ -139,6 +170,13 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
 
 
+    /**
+     * Método es utilizado para hacer correr un progressbar que se llama en segundo plano cuando se quiere cargar un listado
+     * Este listado este progressbar se ejecuta en segundo plano usando un AsyncTask
+     * @param  view
+     *
+     *
+     */
     // public void runProgressBar(View view) {
     public void runProgressBar(View view) {
 
@@ -153,6 +191,17 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         });
     }
 
+
+
+    /**
+     * Clase HardTask extiende de AsyncTask y se implementa con el objetivo de realizar en segundo plano una actividad determinada
+     * para que no afecte el flujo fundamental de la aplicación
+     * @author megamind
+     * @version  v1
+     *
+     *
+     */
+
     private class HardTask extends AsyncTask<String, Integer, String> {
 
         private Context context;
@@ -161,6 +210,14 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
             this.context = context;
         }
 
+
+        /**
+         * Método para realizar las operaciones en background esta sobreescrito
+         *
+         * @param  params
+         *
+         *
+         */
         @Override
         protected String doInBackground(String... params) {
             for (int i = 0; i <= 200; i++) {
@@ -175,12 +232,26 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
             }
             return PROCESS_OK;
         }
-
+        /**
+         * Método sobreescrito y lo que pasa antes de la ejecución
+         *
+         *
+         *
+         *
+         */
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             progressDialog.show();
         }
+
+        /**
+         * Método sobreescrito y lo que pasa mientras se actualiza
+         *
+         *
+         *
+         *
+         */
 
         @Override
         protected void onProgressUpdate(Integer... progress) {
@@ -188,6 +259,13 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
             progressDialog.setProgress(progress[0]);
         }
 
+        /**
+         * Método sobreescrito y lo que pasa despues de la ejecución
+         *
+         *
+         *
+         *
+         */
         @Override
         protected void onPostExecute(String result) {
             progressDialog.dismiss();

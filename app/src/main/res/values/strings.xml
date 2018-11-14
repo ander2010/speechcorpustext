@@ -5,6 +5,10 @@
     <string name="listado">Listado Sentencias</string>
     <string name="corpus">Corpus</string>
     <string name="editarsentencia">Editar Sentencia</string>
+    <string name="datopersonal">Información Personal</string>
+    <string name="action_settings">Preferencias</string>
+    <string name="sentencia">Presione el botón <b>MICRO, espere la señal y diganos su nombre,apellidos</b>  y a que entidad pertenece</string>
+    <string name="sentenciauno">Presione el botón <b>MICRO, espere la señal y explique operaciones</b>  las operaciones son de suma, resta, Multiplicación y División</string>
     <string name="comofunciona">Esta aplicación es creada con el objetivo de <b>recolectar un corpus robusto y diverso sobre operaciones matemáticas</b> , a modo de estadísticas se recoge también la transcripción de los datos personales del usuario que hace la grabación. \n Si tiene algún problema con la aplicación por favor comunicarse a:
 <b>andersanchez1987@gmail.com</b>
 </string>

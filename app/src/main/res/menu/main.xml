@@ -31,9 +31,9 @@
         android:orderInCategory="1"
         android:title="@string/listado"
         app:showAsAction="ifRoom"/>
-    <item
-        android:id="@+id/editaSent"
-        android:orderInCategory="1"
-        android:title="@string/editarsentencia"
-        app:showAsAction="ifRoom"/>
+    <!--<item-->
+        <!--android:id="@+id/editaSent"-->
+        <!--android:orderInCategory="1"-->
+        <!--android:title="@string/editarsentencia"-->
+        <!--app:showAsAction="ifRoom"/>-->
 </menu>

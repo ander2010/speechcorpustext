@@ -9,18 +9,12 @@
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
     android:paddingRight="16dp"
+
     android:orientation="vertical"
     tools:context=".Main2Activity">
 
-    <TextView
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="REcidlsd0"
-        android:textSize="30dp"
 
-        android:layout_marginBottom="20dp"
-        />
     
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
@@ -32,9 +26,24 @@
     </android.support.v7.widget.RecyclerView>
 
 
+    <!--<ProgressBar-->
+
+        <!--android:id="@+id/pbbar"-->
+        <!--style="@android:style/Widget.ProgressBar.Horizontal"-->
+        <!--android:layout_width="353dp"-->
+        <!--android:layout_height="wrap_content"-->
+
+        <!--android:progress="25"-->
 
 
+        <!--/>-->
 
-
-
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Run progress bar"-->
+        <!--android:id="@+id/button"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:onClick="runProgressBar"/>-->
 </LinearLayout>

@@ -1,12 +1,10 @@
 package com.example.letal.speechcorpustext;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.preference.CheckBoxPreference;
 import android.support.v7.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,33 +15,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.letal.speechcorpustext.Objetos.Coche;
 import com.example.letal.speechcorpustext.Objetos.FirebaseReference;
 import com.example.letal.speechcorpustext.Objetos.corpus;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
-
 /**
- * Clase MainActivity ES la que muestra el boton para grabar y realiza el proceso de grabado del corpus de voz
+ * Clase Main4Activity ES la que muestra el boton para grabar y realiza el proceso de grabado de los datos personales del usuario
  * @author megamind
  * @version  v1
  *
  */
-public class MainActivity extends AppCompatActivity {
+
+public class Main4Activity extends AppCompatActivity {
+
     private TextView txvResult;
     FirebaseDatabase database ;
-     DatabaseReference tutorialmyRef ;
-     Button butonedit,buttonenviar;
-     EditText editar;
-     ImageView imageView;
-
+    DatabaseReference tutorialmyRef ;
+    Button butonedit,buttonenviar;
+    ImageView imageView;
+    EditText editar;
 
     /**
      * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesitaria para la actividad
@@ -54,19 +48,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main4);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         butonedit=findViewById(R.id.editarButton);
         buttonenviar=findViewById(R.id.enviarButton);
         editar= findViewById(R.id.editTexto);
-        imageView= findViewById(R.id.btnSpeak);
+        imageView=findViewById(R.id.btnSpeakpersona);
 
 
         txvResult = (TextView) findViewById(R.id.txvResult);
         if (getIntent().hasExtra("dato1"))
         {
 
-          //  txvResult.setText(R.string.sentencia);
+         //  txvResult.setText("Presione el botón MICRO, espere la señal y diganos su nombre,apellidos y a que entidad pertenece");
         }
 //        Bundle parametros =;
 //        if(parametros !=null){
@@ -78,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
 //        txvResult = (TextView) findViewById(R.id.txvResult);
         database = FirebaseDatabase.getInstance();
         tutorialmyRef = database.getReference(FirebaseReference.TUTORIAL_REFERENCE);
-
 
 
 
@@ -102,66 +96,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    /**
-     * Método que permite al usuario despues de grabar la información editarla
-     * @param  view
-     *
-     *
-     *
-     */
-    public void EditarFrase(View view)
-    {
-
-
-
-     //   Toast.makeText(this, "Editar el texto", Toast.LENGTH_SHORT).show();
-        editar.setVisibility(View.VISIBLE);
-        editar.setText(txvResult.getText());
-        txvResult.setVisibility(View.INVISIBLE);
-        buttonenviar.setVisibility(View.VISIBLE);
-        butonedit.setVisibility(View.INVISIBLE);
-        imageView.setVisibility(View.INVISIBLE);
-
-
-    }
-
-
-
-    /**
-     * Método que permite al usuario despues de grabar la información enviarla
-     * @param  view
-     *
-     *
-     *
-     */
-
-    public void EnviarInfo(View view)
-    {
-
-
-        if (editar.getVisibility()==View.VISIBLE)
-        {
-            llenarInformacion(editar.getText().toString());
-
-            editar.setVisibility(View.INVISIBLE);
-            imageView.setVisibility(View.VISIBLE);
-            buttonenviar.setVisibility(View.INVISIBLE);
-
-            Toast.makeText(this, "Datos Editados Enviados Satisfactoriamente", Toast.LENGTH_SHORT).show();
-
-        }
-
-        else{
-
-            llenarInformacion(txvResult.getText().toString());
-            Toast.makeText(this, "Datos  Enviados Satisfactoriamente", Toast.LENGTH_SHORT).show();
-        }
-
-    }
-
-
-
     /**
      * Método que guarda la información generada en la actividad en una base de datos de Firebase
      * @param  valor
@@ -169,17 +103,14 @@ public class MainActivity extends AppCompatActivity {
      *
      *
      */
-
     public void llenarInformacion(String valor)
     {
 
         corpus coche = new corpus("Saludos",valor,"Suma");
-
-        tutorialmyRef.child(FirebaseReference.COCHE_REFERENCE).push().setValue(coche);
-        String valorsito=tutorialmyRef.child(FirebaseReference.DATOS_REFERENCE).getKey();
-        Toast.makeText(this, valorsito, Toast.LENGTH_SHORT).show();
-
+        tutorialmyRef.child(FirebaseReference.DATOS_REFERENCE).push().setValue(coche);
     }
+
+
 
     /**
      * Método que envia el Intent ACTION_RECOGNIZE_SPEECH encargado de transcribir la voz a Texto
@@ -188,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
      *
      *
      */
-
     public void getSpeechInput(View view) {
 
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -201,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Your Device Don't Support Speech Input", Toast.LENGTH_SHORT).show();
         }
     }
-
 
     /**
      * Método sobreescrito el cual se encarga de obtener el resultado de la transcripción y en caso de que todo
@@ -220,48 +149,25 @@ public class MainActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK && data != null) {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     txvResult.setText(result.get(0));
-
-                   // editar.setVisibility(View.VISIBLE);
-//                    editar.setText(txvResult.getText());
-//                    txvResult.setVisibility(View.INVISIBLE);
-
-//                    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-//                    DatabaseReference ref = database.getReference(FirebaseReference.DATOS_REFERENCE);
-//
-//// Attach a listener to read the data at our posts reference
-//                    ref.addValueEventListener(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(DataSnapshot dataSnapshot) {
-//                            Coche post = dataSnapshot.getValue(Coche.class);
-//                            System.out.println(post);
-//                        }
-//                        @Override
-//                        public void onCancelled(DatabaseError databaseError) {
-//                            System.out.println("The read failed: " + databaseError.getCode());
-//                        }
-//                    });
-
-
-
+                    //llenarInformacion(txvResult.getText().toString());
 
                     SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
 //                    SharedPreferences prefs = getSharedPreferences("pref_visualizer",Context.MODE_PRIVATE);
                     boolean key=  pref.getBoolean("show_bass",true);
                     if (key) {
                         butonedit.setVisibility(View.VISIBLE);
-                       // buttonenviar.setVisibility(View.VISIBLE);
 
-                             //  Toast.makeText(getApplicationContext(),"ESta chequeado",Toast.LENGTH_LONG).show();
-                           }
 
-                           else {
+                       // Toast.makeText(getApplicationContext(),"ESta chequeado",Toast.LENGTH_LONG).show();
+                    }
+
+                    else {
 
                         llenarInformacion(txvResult.getText().toString());
                         Toast.makeText(getApplicationContext(),"Se envio la Información Satisfactoriamente",Toast.LENGTH_LONG).show();
 
                     }
 
-                     //   llenarInformacion(txvResult.getText().toString());
                 }
                 break;
         }
@@ -318,6 +224,63 @@ public class MainActivity extends AppCompatActivity {
 //                return true;
         }
         return super.onOptionsItemSelected(item);
+
+    }
+
+
+    /**
+     * Método que permite al usuario despues de grabar la información editarla
+     * @param  view
+     *
+     *
+     *
+     */
+    public void EditarFrase(View view)
+    {
+
+
+
+        //   Toast.makeText(this, "Editar el texto", Toast.LENGTH_SHORT).show();
+        editar.setVisibility(View.VISIBLE);
+        editar.setText(txvResult.getText());
+        txvResult.setVisibility(View.INVISIBLE);
+        buttonenviar.setVisibility(View.VISIBLE);
+        butonedit.setVisibility(View.INVISIBLE);
+        imageView.setVisibility(View.INVISIBLE);
+
+
+
+    }
+
+
+    /**
+     * Método que permite al usuario despues de grabar la información enviarla
+     * @param  view
+     *
+     *
+     *
+     */
+    public void EnviarInfo(View view)
+    {
+
+
+        if (editar.getVisibility()==View.VISIBLE)
+        {
+            llenarInformacion(editar.getText().toString());
+            editar.setVisibility(View.INVISIBLE);
+            imageView.setVisibility(View.VISIBLE);
+            buttonenviar.setVisibility(View.INVISIBLE);
+
+            Toast.makeText(this, "Datos Editados Enviados Satisfactoriamente", Toast.LENGTH_SHORT).show();
+
+        }
+
+        else{
+
+            llenarInformacion(txvResult.getText().toString());
+            Toast.makeText(this, "Datos  Enviados Satisfactoriamente", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 

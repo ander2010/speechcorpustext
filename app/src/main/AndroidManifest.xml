@@ -9,15 +9,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".Principal"
+            android:screenOrientation="portrait"
+            android:label="@string/principal">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".Principal"></activity>
+        <activity
+            android:name=".Main2Activity"
+            android:parentActivityName=".Principal"
+            android:label="@string/listado" />
+        <activity
+            android:name=".MainActivity"
+            android:parentActivityName=".Principal"
+            android:label="@string/corpus" />
+        <activity
+            android:name=".Main3Activity"
+            android:parentActivityName=".Principal"
+            android:label="Como funciona" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <data android:type="sweep" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/action_settings"
+            android:parentActivityName=".Principal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Principal" />
+        </activity>
+
+
+        <activity android:name=".Main4Activity"  android:label="@string/datopersonal" android:parentActivityName=".Principal"></activity>
+
+
     </application>
 
 </manifest>
