@@ -41,7 +41,7 @@ public class Main4Activity extends AppCompatActivity {
 
     /**
      * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesitaria para la actividad
-     * @param  savedInstanceState
+     * @param  savedInstanceState es un parametro de tipo Bundle que almacena infromación de la actividad
      *
      *
      */
@@ -98,7 +98,7 @@ public class Main4Activity extends AppCompatActivity {
 
     /**
      * Método que guarda la información generada en la actividad en una base de datos de Firebase
-     * @param  valor
+     * @param  valor  Este es el texto especifico que se guarda en la base de datos de firebase
      *
      *
      *
@@ -114,7 +114,7 @@ public class Main4Activity extends AppCompatActivity {
 
     /**
      * Método que envia el Intent ACTION_RECOGNIZE_SPEECH encargado de transcribir la voz a Texto
-     * @param  view
+     * @param  view Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
      *
      *
      *
@@ -136,6 +136,9 @@ public class Main4Activity extends AppCompatActivity {
      * Método sobreescrito el cual se encarga de obtener el resultado de la transcripción y en caso de que todo
      * este correocto ejecutar el código que procede.
      * @param  requestCode,resultCode,data
+     * El código de solicitud que pasaste a startActivityForResult().
+     *       Un código de resultado especificado por la segunda actividad. Este código puede ser RESULT_OK si la operación se realizó correctamente o RESULT_CANCELED si el usuario canceló la operación o esta falló por algún motivo.
+     *      Un Intent con la información del resultado.
      *
      *
      *
@@ -176,7 +179,7 @@ public class Main4Activity extends AppCompatActivity {
 
     /**
      * Método sobreescrito para Inflar el Menu esta clase es fundamental porque es donde se infla el Menu
-     * @param  menu
+     * @param  menu es un parametro que representa un elemento de tipo Menu
      * @return  true
      *
      */
@@ -190,7 +193,7 @@ public class Main4Activity extends AppCompatActivity {
 
     /**
      * Método sobreescrito para seleccionar el item que fue clickeado en el Menu  Este método dgenera un parametro item el cual tiene una propiedad getItemId
-     * @param  item
+     * @param  item   es un parametro que representa un elemento de tipo MenuItem para conocer las características del presionado
      * @return  true
      *
      */
@@ -230,7 +233,7 @@ public class Main4Activity extends AppCompatActivity {
 
     /**
      * Método que permite al usuario despues de grabar la información editarla
-     * @param  view
+     * @param  view Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
      *
      *
      *
@@ -255,7 +258,7 @@ public class Main4Activity extends AppCompatActivity {
 
     /**
      * Método que permite al usuario despues de grabar la información enviarla
-     * @param  view
+     * @param  view Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
      *
      *
      *

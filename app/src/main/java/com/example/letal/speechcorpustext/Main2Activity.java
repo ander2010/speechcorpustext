@@ -48,7 +48,7 @@ public class Main2Activity extends AppCompatActivity {
 
     /**
      * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesitaria para la actividad
-     * @param  savedInstanceState
+     * @param  savedInstanceState es un parametro de tipo Bundle que almacena infromación de la actividad
      *
      *
      */
@@ -73,7 +73,7 @@ public class Main2Activity extends AppCompatActivity {
         dbCielo.addValueEventListener(new ValueEventListener() {
             /**
              *Método el cual le adiciona un escuchador que detecta los cambios ocurridos en los datos del listado almacenado en la nube
-             * @param dataSnapshot
+             * @param dataSnapshot El agente de escucha recibe una DataSnapshot que contiene los datos de la ubicación específica en el momento del evento. Si llamas a getValue() en una instantánea, se muestra la representación de los datos del objeto Java
              */
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -100,8 +100,8 @@ public class Main2Activity extends AppCompatActivity {
 
 
             /**
-             *Método sobreescrito el cual se ejecuta cuando es cancelada la conexión a la nube
-             * @param databaseError
+             *Método sobreescrito el cual se  llama si se cancela la lectura.
+             * @param databaseError  Este método recibe un objeto DatabaseError que indica por qué se produjo el error.
              */
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -115,7 +115,7 @@ public class Main2Activity extends AppCompatActivity {
     /**
      * Este método permite interactuar en la generación del listado que va a ser mostrado se encarga de almacenar la información en un listado
      * @return ArrayList<Coche>
-     * @param items
+     * @param items Listado completo a mostrar en la lista de información
      * */
 
     public  ArrayList<Coche> guardarinformacion(Iterator<DataSnapshot>items)

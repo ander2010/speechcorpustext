@@ -35,6 +35,9 @@ public class SettingsFragment extends PreferenceFragmentCompat {
      * Método sobreescrito para la creación de la actividad el método onCreatePreferences es donde se inicializa la información necesitaria para cargar el  fragmento
      * @param  bundle,s
      *
+     * bundle: si el fragmento se está recreando desde un estado guardado anterior, este es el estado.
+     *
+     * Cadena s: si no es nulo, este fragmento de preferencia debe estar enraizado en la Pantalla de Preferencia con esta clave.
      *
      */
     @Override

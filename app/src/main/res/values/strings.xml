@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Corpus APP</string>
-    <string name="principal">Principal</string>
+    <string name="principal">SpeechCorpus</string>
     <string name="list">Menu</string>
     <string name="listado">Listado Sentencias</string>
     <string name="corpus">Corpus</string>

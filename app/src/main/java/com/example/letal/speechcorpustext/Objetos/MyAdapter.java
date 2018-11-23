@@ -27,6 +27,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
     /**
      * El método OnCreateViewHolder inicializa el ViewHolder
      * @param parent,viewType
+     * parent: ViewGroup en el que se agregará la nueva vista después de que se vincule a una posición de adaptador.
+     * int viewType: el tipo de vista de la nueva vista.
      * */
 
     @Override
@@ -41,6 +43,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
     /**
      * El método onBindViewHolder(ViewHolder viewholder, int position) se usa para configurar el contenido de las Views
      * @param holder,position
+     *
+     * holder: ViewHolder, que debe actualizarse para representar el contenido del elemento en la posición dada en el conjunto de datos.
+     *
+     * position int: la posición del elemento dentro del conjunto de datos del adaptador.
+     *
+     *
      * */
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
@@ -56,7 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
 
     }
 /**
- * Cuenta la cantidad de elementos
+ * El número total de elementos en este adaptador.
  *
  * */
     @Override
@@ -98,6 +106,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
 
         /**
          * Este método se encarga de asignar a los texview especificos el contenido para que sea dibujado en el item y forme la lista
+         *
          * */
         public void asignardatos(Coche s) {
             textView.setText(s.getMarca());
@@ -108,6 +117,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
 
     /**
      * Este es nuestro constructor (puede variar según lo que queremos mostrar)
+     * @param  contexto,myDataSet el contexto actual
+     *
+     * el valor no debe de ser nulo
+     * myDataSet 	la lista de información
      * */
     public MyAdapter(Context contexto,ArrayList<Coche> myDataSet) {
 

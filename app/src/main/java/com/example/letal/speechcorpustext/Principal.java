@@ -40,7 +40,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
     /**
      * Método sobreescrito para Inflar el Menu esta clase es fundamental porque es donde se infla el Menu
-     * @param  menu
+     * @param  menu es un parametro que representa un elemento de tipo Menu
      * @return  true
      *
      */
@@ -56,7 +56,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
     /**
      * Método sobreescrito para seleccionar el item que fue clickeado en el Menu  Este método dgenera un parametro item el cual tiene una propiedad getItemId
-     * @param  item
+     * @param  item es un parametro que representa un elemento de tipo MenuItem para conocer las características del presionado
      * @return  true
      *
      */
@@ -74,7 +74,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
     /**
      * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesitaria para la actividad
-     * @param  savedInstanceState
+     * @param  savedInstanceState  es un parametro de tipo Bundle que almacena infromación de la actividad
      *
      *
      */
@@ -139,7 +139,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     /**
      * Método sobreescrito generado a partir de la implementacion de  un View.OnClickListener y es para saber a que componente se dio clic
      * Este Método realiza el case para obtener cual es el elemento cliqueado y a que actividad se va a llamar.
-     * @param   v
+     * @param   v Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
      *
      *
      */
@@ -173,7 +173,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     /**
      * Método es utilizado para hacer correr un progressbar que se llama en segundo plano cuando se quiere cargar un listado
      * Este listado este progressbar se ejecuta en segundo plano usando un AsyncTask
-     * @param  view
+     * @param  view Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
      *
      *
      */
@@ -214,7 +214,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         /**
          * Método para realizar las operaciones en background esta sobreescrito
          *
-         * @param  params
+         * @param  params un grupo de parametros que se pasan a modo de cadena
          *
          *
          */
@@ -247,6 +247,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
         /**
          * Método sobreescrito y lo que pasa mientras se actualiza
+         * @param progress  Parametro que lleva un entero con los valores del progreso
          *
          *
          *
@@ -262,19 +263,19 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         /**
          * Método sobreescrito y lo que pasa despues de la ejecución
          *
-         *
+         * @param result  ESte atributo trae consigo el resultado de lo que ha sucedido si se ejecuto OK o hubo error
          *
          *
          */
         @Override
         protected void onPostExecute(String result) {
             progressDialog.dismiss();
-            if (PROCESS_OK.equals(result)) {
-                Toast.makeText(context, "Process OK " + result, Toast.LENGTH_LONG).show();
-
-            } else {
-                Toast.makeText(context, "Process ERROR " + result, Toast.LENGTH_LONG).show();
-            }
+//            if (PROCESS_OK.equals(result)) {
+//                Toast.makeText(context, "Process OK " + result, Toast.LENGTH_LONG).show();
+//
+//            } else {
+//                Toast.makeText(context, "Process ERROR " + result, Toast.LENGTH_LONG).show();
+//            }
         }
     }
 }
