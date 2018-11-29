@@ -1,0 +1,108 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+
+
+
+    <TextView
+        android:id="@+id/txvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+
+        android:layout_marginRight="15dp"
+
+        android:text="@string/sentenciauno"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="22sp"
+        />
+
+
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+
+            android:visibility="invisible"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/menuLinearLayout"
+        android:layout_below="@+id/midTableLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp"
+
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/editarButton"
+            android:text="Editar"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/White"
+            android:onClick="EditarFrase"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_weight="2"/>
+
+
+
+
+        <Button
+            android:id="@+id/enviarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/White"
+
+            android:visibility="invisible"
+            android:text="Enviar "
+
+            android:onClick="EnviarInfo"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btnSpeak"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="60dp"
+        android:contentDescription="TODO"
+        android:gravity="center"
+        android:onClick="getSpeechInput"
+        android:src="@drawable/ic_mic"
+        app:srcCompat="@drawable/ic_mic"
+        tools:srcCompat="@drawable/ic_mic" />
+
+</RelativeLayout>

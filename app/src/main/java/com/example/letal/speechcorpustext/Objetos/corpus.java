@@ -16,6 +16,8 @@ public class corpus {
     /**
      * constructor de la clase corpus
      * @param titulo,descripcion,operacion
+     * ES el constructor de la clase donde se inicializan el título, que se usará en futuras versiones de la aplicación
+     * la descripción que almacena lo que el usuario expresó y la operación que en el futuro almacenará el tipo de operación
      *
      * */
     public corpus(String titulo, String descripcion, String operacion) {
@@ -42,7 +44,7 @@ public class corpus {
 
     /**
      * Método setTitulo es para cambiar el valor del parámetro
-     * @param titulo
+     * @param titulo este parametro no se usa actualmente pero se penso para futuros usos
      *
      * */
     public void setTitulo(String titulo) {
@@ -59,7 +61,7 @@ public class corpus {
 
     /**
      * Método setDescripcion es para cambiar el valor del parámetro
-     * @param descripcion
+     * @param descripcion este atributo guarda la descripción hablada
      *
      * */
     public void setDescripcion(String descripcion) {
@@ -76,7 +78,7 @@ public class corpus {
 
     /**
      * Método setOperacion es para cambiar el valor del parámetro
-     * @param operacion
+     * @param operacion esta variable representa el nombre de la operación
      *
      * */
     public void setOperacion(String operacion) {

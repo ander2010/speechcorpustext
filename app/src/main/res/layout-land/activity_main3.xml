@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10.0"
+
+    tools:context=".Main3Activity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="-15dp"
+        android:layout_height="100dp"
+        android:layout_weight="3.0"
+        app:srcCompat="@drawable/portad" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="117dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="10dp"
+
+        android:layout_weight="3.0"
+
+        android:text="@string/comofunciona"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="16sp"
+
+
+        />
+
+    <Button
+        android:id="@+id/button"
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/cerclebackgroundgreen"
+        android:text="Contactanos"
+
+        android:textColor="@color/White"
+        android:textColorLink="@color/White"
+        android:textSize="12sp" />
+
+
+</LinearLayout>

@@ -1,22 +1,15 @@
 package com.example.letal.speechcorpustext;
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
-import com.example.letal.speechcorpustext.Objetos.Coche;
+import com.example.letal.speechcorpustext.Objetos.datos;
 import com.example.letal.speechcorpustext.Objetos.FirebaseReference;
 import com.example.letal.speechcorpustext.Objetos.MyAdapter;
-import com.example.letal.speechcorpustext.Objetos.corpus;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,7 +28,7 @@ import java.util.Iterator;
  *
  */
 public class Main2Activity extends AppCompatActivity {
-    private ArrayList<Coche> mDataSet;
+    private ArrayList<datos> mDataSet;
     FirebaseDatabase database ;
     DatabaseReference tutorialmyRef ;
     private ProgressBar progressBar;
@@ -47,8 +40,8 @@ public class Main2Activity extends AppCompatActivity {
 
 
     /**
-     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesitaria para la actividad
-     * @param  savedInstanceState es un parametro de tipo Bundle que almacena infromación de la actividad
+     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesaria para la actividad
+     * @param  savedInstanceState es un parámetro  de tipo Bundle que almacena infromación de la actividad
      *
      *
      */
@@ -79,7 +72,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 Iterator<DataSnapshot>items= dataSnapshot.getChildren().iterator();
-                final ArrayList<Coche> mdatace=  guardarinformacion(items);
+                final ArrayList<datos> mdatace=  guardarinformacion(items);
 
 
 
@@ -114,11 +107,11 @@ public class Main2Activity extends AppCompatActivity {
 
     /**
      * Este método permite interactuar en la generación del listado que va a ser mostrado se encarga de almacenar la información en un listado
-     * @return ArrayList<Coche>
+     * @return ArrayList<datos>
      * @param items Listado completo a mostrar en la lista de información
      * */
 
-    public  ArrayList<Coche> guardarinformacion(Iterator<DataSnapshot>items)
+    public  ArrayList<datos> guardarinformacion(Iterator<DataSnapshot>items)
     {
         while (items.hasNext())
         {
@@ -128,7 +121,7 @@ public class Main2Activity extends AppCompatActivity {
             descripcion=item.child("descripcion").getValue().toString();
             operacion=item.child("operacion").getValue().toString();
             titulo=item.child("titulo").getValue().toString();
-            Coche coches=new Coche(descripcion,1,1,titulo);
+            datos coches=new datos(descripcion,1,1,titulo);
             mDataSet.add(coches);
             System.out.println(descripcion+" " + operacion +" " + titulo);
 

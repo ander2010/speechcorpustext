@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 /**
- * Clase Main4Activity ES la que muestra el boton para grabar y realiza el proceso de grabado de los datos personales del usuario
+ * Clase Main4Activity ES la que muestra el botón para grabar y realiza el proceso de grabado de los datos personales del usuario
  * @author megamind
  * @version  v1
  *
@@ -40,8 +40,8 @@ public class Main4Activity extends AppCompatActivity {
     EditText editar;
 
     /**
-     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesitaria para la actividad
-     * @param  savedInstanceState es un parametro de tipo Bundle que almacena infromación de la actividad
+     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesaria para la actividad
+     * @param  savedInstanceState es un parámetro  de tipo Bundle que almacena infromación de la actividad
      *
      *
      */
@@ -113,8 +113,8 @@ public class Main4Activity extends AppCompatActivity {
 
 
     /**
-     * Método que envia el Intent ACTION_RECOGNIZE_SPEECH encargado de transcribir la voz a Texto
-     * @param  view Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
+     * Método que envía el Intent ACTION_RECOGNIZE_SPEECH encargado de transcribir la voz a Texto
+     * @param  view Este parámetro  te da acceso a la vista y específicamente funciona para saber el id que fue presionado
      *
      *
      *
@@ -178,8 +178,8 @@ public class Main4Activity extends AppCompatActivity {
 
 
     /**
-     * Método sobreescrito para Inflar el Menu esta clase es fundamental porque es donde se infla el Menu
-     * @param  menu es un parametro que representa un elemento de tipo Menu
+     * Método sobreescrito para Inflar el Menu esta clase es fundamental porque es donde se dibuja el Menu
+     * @param  menu es un parámetro  que representa un elemento de tipo Menu
      * @return  true
      *
      */
@@ -192,8 +192,8 @@ public class Main4Activity extends AppCompatActivity {
 
 
     /**
-     * Método sobreescrito para seleccionar el item que fue clickeado en el Menu  Este método dgenera un parametro item el cual tiene una propiedad getItemId
-     * @param  item   es un parametro que representa un elemento de tipo MenuItem para conocer las características del presionado
+     * Método sobreescrito para seleccionar el item que fue clickeado en el Menu  Este método genera un parámetro  item el cual tiene una propiedad getItemId
+     * @param  item   es un parámetro  que representa un elemento de tipo MenuItem para conocer las características del presionado
      * @return  true
      *
      */
@@ -233,7 +233,7 @@ public class Main4Activity extends AppCompatActivity {
 
     /**
      * Método que permite al usuario despues de grabar la información editarla
-     * @param  view Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
+     * @param  view Este parámetro  te da acceso a la vista y especificamente funciona para saber el id que fue presionado
      *
      *
      *
@@ -258,7 +258,7 @@ public class Main4Activity extends AppCompatActivity {
 
     /**
      * Método que permite al usuario despues de grabar la información enviarla
-     * @param  view Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
+     * @param  view Este parámetro  te da acceso a la vista y especificamente funciona para saber el id que fue presionado
      *
      *
      *

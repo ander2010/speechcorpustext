@@ -1,12 +1,11 @@
 package com.example.letal.speechcorpustext;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.preference.CheckBoxPreference;
 import android.support.v7.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,21 +16,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.letal.speechcorpustext.Objetos.Coche;
 import com.example.letal.speechcorpustext.Objetos.FirebaseReference;
 import com.example.letal.speechcorpustext.Objetos.corpus;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
 
 /**
- * Clase MainActivity ES la que muestra el boton para grabar y realiza el proceso de grabado del corpus de voz
+ * Clase MainActivity ES la que muestra el botón para grabar y realiza el proceso de grabado del corpus de voz
  * @author megamind
  * @version  v1
  *
@@ -46,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesitaria para la actividad
-     * @param  savedInstanceState  es un parametro de tipo Bundle que almacena infromación de la actividad
+     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesaria para la actividad
+     * @param  savedInstanceState  es un parámetro  de tipo Bundle que almacena infromación de la actividad
      *
      *
      */
@@ -56,10 +51,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         butonedit=findViewById(R.id.editarButton);
         buttonenviar=findViewById(R.id.enviarButton);
         editar= findViewById(R.id.editTexto);
         imageView= findViewById(R.id.btnSpeak);
+
+
+//        //detectamos el cambio de orientación en este caso
+//        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//            landscape = true;
+//            //acciones deseadas
+//        }
+//
+//        if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+//            landscape = false;
+//            //acciones deseadas
+//        }
+
 
 
         txvResult = (TextView) findViewById(R.id.txvResult);
@@ -104,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Método que permite al usuario despues de grabar la información editarla
-     * @param  view Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
+     * Método que permite al usuario después de grabar la información editarla
+     * @param  view Este parámetro  te da acceso a la vista y específicamente funciona para saber el id que fue presionado
      *
      *
      *
@@ -129,8 +138,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Método que permite al usuario despues de grabar la información enviarla
-     * @param  view Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
+     * Método que permite al usuario después de grabar la información enviarla
+     * @param  view Este parámetro te da acceso a la vista y específicamente funciona para saber el id que fue presionado
      *
      *
      *
@@ -164,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Método que guarda la información generada en la actividad en una base de datos de Firebase
-     * @param  valor Este es el texto especifico que se guarda en la base de datos de firebase
+     * @param  valor Este es el texto específico que se guarda en la base de datos de firebase
      *
      *
      *
@@ -182,8 +191,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Método que envia el Intent ACTION_RECOGNIZE_SPEECH encargado de transcribir la voz a Texto
-     * @param  view  Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
+     * Método que envía el Intent ACTION_RECOGNIZE_SPEECH encargado de transcribir la voz a Texto
+     * @param  view  Este parámetro  te da acceso a la vista y específicamente funciona para saber el id que fue presionado
      *
      *
      *
@@ -236,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
 //                    ref.addValueEventListener(new ValueEventListener() {
 //                        @Override
 //                        public void onDataChange(DataSnapshot dataSnapshot) {
-//                            Coche post = dataSnapshot.getValue(Coche.class);
+//                            datos post = dataSnapshot.getValue(datos.class);
 //                            System.out.println(post);
 //                        }
 //                        @Override
@@ -274,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Método sobreescrito para Inflar el Menu esta clase es fundamental porque es donde se infla el Menu
-     * @param  menu es un parametro que representa un elemento de tipo Menu
+     * @param  menu es un parámetro  que representa un elemento de tipo Menu
      * @return  true
      *
      */
@@ -287,8 +296,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Método sobreescrito para seleccionar el item que fue clickeado en el Menu  Este método dgenera un parametro item el cual tiene una propiedad getItemId
-     * @param  item   es un parametro que representa un elemento de tipo MenuItem para conocer las características del presionado
+     * Método sobreescrito para seleccionar el item que fue clickeado en el Menu  Este método genera un parámetro  item el cual tiene una propiedad getItemId
+     * @param  item   es un parámetro  que representa un elemento de tipo MenuItem para conocer las características del presionado
      * @return  true
      *
      */

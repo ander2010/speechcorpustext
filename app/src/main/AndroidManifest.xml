@@ -22,10 +22,12 @@
         </activity>
         <activity
             android:name=".Main2Activity"
+
             android:parentActivityName=".Principal"
             android:label="@string/listado" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName=".Principal"
             android:label="@string/corpus" />
         <activity
@@ -56,7 +58,9 @@
         </activity>
 
 
-        <activity android:name=".Main4Activity"  android:label="@string/datopersonal" android:parentActivityName=".Principal"></activity>
+        <activity android:name=".Main4Activity"
+            android:screenOrientation="portrait"
+            android:label="@string/datopersonal" android:parentActivityName=".Principal"></activity>
 
 
     </application>

@@ -56,7 +56,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
     /**
      * Método sobreescrito para seleccionar el item que fue clickeado en el Menu  Este método dgenera un parametro item el cual tiene una propiedad getItemId
-     * @param  item es un parametro que representa un elemento de tipo MenuItem para conocer las características del presionado
+     * @param  item es un parámetro  que representa un elemento de tipo MenuItem para conocer las características del presionado
      * @return  true
      *
      */
@@ -73,8 +73,8 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
 
     /**
-     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesitaria para la actividad
-     * @param  savedInstanceState  es un parametro de tipo Bundle que almacena infromación de la actividad
+     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesaria para la actividad
+     * @param  savedInstanceState  es un parámetro  de tipo Bundle que almacena información de la actividad
      *
      *
      */
@@ -139,13 +139,14 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     /**
      * Método sobreescrito generado a partir de la implementacion de  un View.OnClickListener y es para saber a que componente se dio clic
      * Este Método realiza el case para obtener cual es el elemento cliqueado y a que actividad se va a llamar.
-     * @param   v Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
+     * @param   v Este parámetro  te da acceso a la vista y específicamente funciona para saber el id que fue presionado
      *
      *
      */
 
     @Override
     public void onClick(View v) {
+        boolean valor=false;
 
         Intent i;
         switch (v.getId()){
@@ -159,7 +160,11 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
             startActivity(i);break;
             case R.id.operacione:i=new Intent(this,Main2Activity.class);startActivity(i);
+
+            if(valor=false){
                 runProgressBar(v);
+            valor=true;
+            }
             break;
             default: break;
         }
@@ -173,7 +178,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     /**
      * Método es utilizado para hacer correr un progressbar que se llama en segundo plano cuando se quiere cargar un listado
      * Este listado este progressbar se ejecuta en segundo plano usando un AsyncTask
-     * @param  view Este parametro te da acceso a la vista y especificamente funciona para saber el id que fue presionado
+     * @param  view Este parámetro  te da acceso a la vista y específicamente funciona para saber el id que fue presionado
      *
      *
      */
@@ -182,6 +187,8 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
         final HardTask downloadTask = new HardTask(Principal.this);
         downloadTask.execute("some_param");
+
+
 
         progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
@@ -214,7 +221,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         /**
          * Método para realizar las operaciones en background esta sobreescrito
          *
-         * @param  params un grupo de parametros que se pasan a modo de cadena
+         * @param  params un grupo de parámetros que se pasan a modo de cadena
          *
          *
          */
@@ -247,7 +254,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
         /**
          * Método sobreescrito y lo que pasa mientras se actualiza
-         * @param progress  Parametro que lleva un entero con los valores del progreso
+         * @param progress  parámetro  que lleva un entero con los valores del progreso
          *
          *
          *
@@ -263,7 +270,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         /**
          * Método sobreescrito y lo que pasa despues de la ejecución
          *
-         * @param result  ESte atributo trae consigo el resultado de lo que ha sucedido si se ejecuto OK o hubo error
+         * @param result  ESte atributo trae consigo el resultado de lo que ha sucedido si se ejecutó OK o existió un error
          *
          *
          */

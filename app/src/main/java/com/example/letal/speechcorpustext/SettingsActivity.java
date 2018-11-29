@@ -34,8 +34,8 @@ public class SettingsActivity extends AppCompatActivity {
 
 
     /**
-     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesitaria para la actividad
-     * @param  savedInstanceState es un parametro de tipo Bundle que almacena infromación de la actividad
+     * Método sobreescrito para la creación de la actividad el método oncreate es donde se inicializa la información necesaria para la actividad
+     * @param  savedInstanceState es un parámetro  de tipo Bundle que almacena información de la actividad
      *
      *
      */
@@ -52,8 +52,8 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     /**
-     * Método sobreescrito para seleccionar el item que fue clickeado en el Menu  Este método dgenera un parametro item el cual tiene una propiedad getItemId
-     * @param  item  es un parametro que representa un elemento de tipo MenuItem para conocer las características del presionado
+     * Método sobreescrito para seleccionar el item que fue clickeado en el Menu  Este método genera un parametro item el cual tiene una propiedad getItemId
+     * @param  item  es un parámetro  que representa un elemento de tipo MenuItem para conocer las características del presionado
      * @return  true
      *
      */

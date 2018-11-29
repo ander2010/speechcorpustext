@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * @author megamind
  * */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
-    private ArrayList<Coche> mDataSet;
+    private ArrayList<datos> mDataSet;
     private View.OnClickListener listener;
     private Context context;
 
@@ -106,9 +106,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
 
         /**
          * Este método se encarga de asignar a los texview especificos el contenido para que sea dibujado en el item y forme la lista
-         *
+         * @param s  es el dato que se mostrará en los Texview que conforman la plantilla del ViewHolder
          * */
-        public void asignardatos(Coche s) {
+        public void asignardatos(datos s) {
             textView.setText(s.getMarca());
             textView1.setText(s.getMarca());
 
@@ -122,7 +122,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
      * el valor no debe de ser nulo
      * myDataSet 	la lista de información
      * */
-    public MyAdapter(Context contexto,ArrayList<Coche> myDataSet) {
+    public MyAdapter(Context contexto,ArrayList<datos> myDataSet) {
 
         context=contexto;
         mDataSet = myDataSet;
